@@ -1,4 +1,6 @@
-package CSV;
+package Control;
+
+
 
 
 /*
@@ -20,7 +22,7 @@ import java.util.ArrayList;
  *
  * @author ep972
  */
-public class Control_CSV_LE extends javax.swing.JPanel {
+public class Control extends javax.swing.JPanel {
 
     private String[][] datos;
     private String[] nombreColumna;
@@ -31,7 +33,7 @@ public class Control_CSV_LE extends javax.swing.JPanel {
     /**
      * Creates new form Control_CSV_LE
      */
-    public Control_CSV_LE() {
+    public Control() {
         initComponents();
         panelNavegacion.setVisible(false);
         PanelPaginacion.setVisible(false);
@@ -240,9 +242,8 @@ public class Control_CSV_LE extends javax.swing.JPanel {
 
     private void actualizarPanelPaginacion() {
         PanelPaginacion.removeAll();
-        PanelPaginacion.setLayout(new BorderLayout()); // Cambiar a BorderLayout
+        PanelPaginacion.setLayout(new BorderLayout()); 
 
-        // Crear un panel para los botones de paginación
         JPanel panelBotones = new JPanel();
         panelBotones.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 0));
 
@@ -274,7 +275,6 @@ public class Control_CSV_LE extends javax.swing.JPanel {
             panelBotones.add(btnPagina);
         }
 
-        // Agregar botón de acceso directo a la última página con puntos suspensivos
         if (finPagina < totalPaginas) {
             JLabel lblSuspensivos = new JLabel("...");
             panelBotones.add(lblSuspensivos);
@@ -342,7 +342,7 @@ public class Control_CSV_LE extends javax.swing.JPanel {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(550, 400);
 
-            Control_CSV_LE lector = new Control_CSV_LE();
+            Control lector = new Control();
             frame.add(lector);
             frame.setVisible(true);
 
